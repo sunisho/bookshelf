@@ -1,22 +1,27 @@
 <div class="index">
   {{ partial "default_head.html" . }}
+
+  <section>
+  {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
   <div class="row">
     <div class="col-sm-9">
-
-      <div class="articles">
-        <div class="row">
-          {{ range $key, $value := .Paginator.Pages }}
-          <div class="col-sm-{{ if lt $key 4 }}6{{ else }}4{{ end }}">
-            {{ .Render "li" }}
-          </div>
-          {{ end }}
-        </div>
+    {{ if eq "categories" $taxonomyname }}
+      {{ range $key, $value := $taxonomy }}
+        <div>{{ $key }}</div>
+        <div class="articles">
+          <div class="row">
+            <div class="col-sm-{{ if lt $key 4 }}6{{ else }}4{{ end }}">
+        {{ range $value.Pages }}
+          {{ .Render "li" }}
+        {{ end }}
       </div>
-
-      {{ partial "pagination.html" . }}
-
     </div>
-
   </div>
+      {{ end }}
+    {{ end }}
+  </div></div>
+  {{ end }}
+</section>
+
   {{ partial "default_foot.html" . }}
 </div>

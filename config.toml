@@ -4,3 +4,4 @@ languageCode = "en-us"
 
 [Params]
   Author = "Sunish Oturkar"
+  categories = ["fiction", "non-fiction"]
