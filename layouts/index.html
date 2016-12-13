@@ -3,25 +3,26 @@
 
   <section>
   {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-  <div class="row">
-    <div class="col-sm-9">
-    {{ if eq "categories" $taxonomyname }}
-      {{ range $key, $value := $taxonomy }}
-        <div>{{ $key }}</div>
-        <div class="articles">
-          <div class="row">
-            <div class="col-sm-{{ if lt $key 4 }}6{{ else }}4{{ end }}">
-        {{ range $value.Pages }}
-          {{ .Render "li" }}
+    <div class="row">
+      <div class="col-sm-9">
+        {{ if eq "categories" $taxonomyname }}
+          <h1>{{ range $key, $value := $taxonomy }}
+            <div>{{ $key }}</div><div><br></div>
+              <div class="articles">
+                <div class="row">
+                  {{ range $value.Pages }}
+                  <div class="col-sm-{{ if lt $key 4 }}6{{ else }}4{{ end }}">
+                    {{ .Render "li" }}
+                  </div>
+                  {{ end }}
+                </div>
+              </div>
+          {{ end }}</h1>
         {{ end }}
       </div>
     </div>
-  </div>
-      {{ end }}
-    {{ end }}
-  </div></div>
   {{ end }}
-</section>
+  </section>
 
   {{ partial "default_foot.html" . }}
 </div>
