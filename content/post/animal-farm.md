@@ -1,6 +1,5 @@
 +++
 title = "Animal Farm"
-h3 = "George Orwell"
 draft = false
 date = "2016-12-13T12:36:14-05:00"
 image = "animal-farm.jpg"
