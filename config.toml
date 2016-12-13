@@ -1,0 +1,6 @@
+baseurl = "https://sunisho.github.io/bookshelf"
+title = "Sunish Oturkar Book Reviews"
+languageCode = "en-us"
+
+[Params]
+  Author = "Sunish Oturkar"
