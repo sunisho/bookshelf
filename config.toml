@@ -1,5 +1,5 @@
-baseurl = "https://sunisho.github.io/bookshelf"
-title = "Sunish Oturkar Book Reviews"
+baseurl = "https://sunisho.github.io/bookshelf/"
+title = "Sunish's Reading List 2016"
 languageCode = "en-us"
 
 [Params]
