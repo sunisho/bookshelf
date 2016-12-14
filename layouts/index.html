@@ -11,7 +11,7 @@
               <div class="articles">
                 <div class="row">
                   {{ range $value.Pages }}
-                  <div class="col-sm-{{ if lt $key 4 }}6{{ else }}4{{ end }}">
+                  <div class="col-sm-{{ if lt $key 2 }}4{{ else }}2{{ end }}">
                     {{ .Render "li" }}
                   </div>
                   {{ end }}
