@@ -2,6 +2,10 @@ baseurl = "https://sunisho.github.io/bookshelf/"
 title = "Sunish's Reading List 2016"
 languageCode = "en-us"
 
+paginate = 10
+paginatePath  ="page"
+
+canonifyurls = true
 [Params]
   Author = "Sunish Oturkar"
   categories = ["fiction", "non-fiction"]

@@ -1,28 +1,50 @@
 <div class="index">
   {{ partial "default_head.html" . }}
 
-  <section>
-  {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+
+
     <div class="row">
-      <div class="col-sm-9">
+      <div class="col-sm-12">
+
+        {{ $additionalfiction := 4 }}
+
+
+        {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
         {{ if eq "categories" $taxonomyname }}
-          <h1>{{ range $key, $value := $taxonomy }}
-            <div>{{ $key }}</div><div><br></div>
-              <div class="articles">
-                <div class="row">
-                  {{ range $value.Pages }}
-                  <div class="col-sm-{{ if lt $key 2 }}4{{ else }}2{{ end }}">
-                    {{ .Render "li" }}
+
+          <div class="content">
+            {{ range $key, $value := $taxonomy }}
+
+              {{ $length := len $value }}
+              <a href="{{ $.Site.BaseURL}}{{ $taxonomyname }}/{{ $key | urlize }}">{{ $key }}</a>
+              ({{ if eq "fiction" $key }}{{ add $length $additionalfiction}}{{else}}{{$length}}{{end}})
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            {{ end }}
+          </div>
+
+        {{ end }}
+        {{ end }}
+        <br><br>
+        {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+          {{ if eq "categories" $taxonomyname }}
+            <h1>{{ range $key, $value := $taxonomy }}
+              {{ $length := len $value }}
+              <div>{{ $key }} ({{if eq "fiction" $key}}{{add $length $additionalfiction }}{{else}}{{$length}}{{end}})</div><div><br></div>
+                <div class="articles">
+                  <div class="row">
+                    {{ range $value.Pages }}
+                    <div class="col-sm-{{ if lt $key 2 }}3{{ else }}2{{ end }}">
+                      {{ .Render "li" }}
+                    </div>
+                    {{ end }}
                   </div>
-                  {{ end }}
                 </div>
-              </div>
-          {{ end }}</h1>
+            {{ end }}</h1>
+          {{ end }}
         {{ end }}
       </div>
-    </div>
-  {{ end }}
-  </section>
 
-  {{ partial "default_foot.html" . }}
-</div>
+    </div>
+      {{ partial "default_foot.html" . }}
+  </div>
