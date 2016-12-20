@@ -1,6 +1,7 @@
 baseurl = "https://shomedia.com/blog/bookshelf/"
 title = "Sunish's Reading List 2016"
 languageCode = "en-us"
+theme = "hugo_theme_robust"
 
 paginate = 10
 paginatePath  ="page"

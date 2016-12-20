@@ -9,5 +9,8 @@ weight = 1
 
 +++
 
-The first book in the Maze Runner series. Wicked is good.
+The first book in the Maze Runner series. This book extends to the boundaries of humanity, experimenting with the chilling extremes of what our society is capable of when under severe duress.
 
+### Notable Excerpts
+
+> 'Worked, didn’t it? Aim high, hit low.'
