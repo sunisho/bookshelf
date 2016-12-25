@@ -1,4 +1,4 @@
-baseurl = "https://shomedia.com/blog/bookshelf/"
+baseurl = "https://www.shomedia.com/blog/bookshelf/"
 title = "Sunish's Reading List 2016"
 languageCode = "en-us"
 theme = "hugo_theme_robust"
